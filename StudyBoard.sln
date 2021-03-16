@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyBoard.Core", "StudyBoard.Core\StudyBoard.Core.csproj", "{3AD3A60D-505F-4532-ACDA-BC9C02C56FB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyBoard.Core", "StudyBoard.Core\StudyBoard.Core.csproj", "{3AD3A60D-505F-4532-ACDA-BC9C02C56FB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyBoard.Auth", "StudyBoard.Auth\StudyBoard.Auth.csproj", "{A6CAE619-6B33-42E0-99BC-F2A66CCD305B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyBoard.Auth", "StudyBoard.Auth\StudyBoard.Auth.csproj", "{A6CAE619-6B33-42E0-99BC-F2A66CCD305B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyBoard.Auth.WebApi", "StudyBoard.Auth.WebApi\StudyBoard.Auth.WebApi.csproj", "{63225B23-8148-417E-A249-5D2678A01801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyBoard.Auth.WebApi", "StudyBoard.Auth.WebApi\StudyBoard.Auth.WebApi.csproj", "{63225B23-8148-417E-A249-5D2678A01801}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyBoard.DataFacade.WebApi", "StudyBoard.DataFacade.WebApi\StudyBoard.DataFacade.WebApi.csproj", "{61875AF8-3109-4F05-88A6-0D0696A96A0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyBoard.DataFacade.WebApi", "StudyBoard.DataFacade.WebApi\StudyBoard.DataFacade.WebApi.csproj", "{61875AF8-3109-4F05-88A6-0D0696A96A0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyBoard.DataFacade", "StudyBoard.DataFacade\StudyBoard.DataFacade.csproj", "{D5F61087-E2E9-486A-808F-C876BE1022DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyBoard.DataFacade", "StudyBoard.DataFacade\StudyBoard.DataFacade.csproj", "{D5F61087-E2E9-486A-808F-C876BE1022DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyBoard.Core.Web", "StudyBoard.Core.Web\StudyBoard.Core.Web.csproj", "{247F48C0-91F7-4E84-A86F-8805543564FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3AD3A60D-505F-4532-ACDA-BC9C02C56FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +85,23 @@ Global
 		{D5F61087-E2E9-486A-808F-C876BE1022DC}.Release|x64.Build.0 = Release|Any CPU
 		{D5F61087-E2E9-486A-808F-C876BE1022DC}.Release|x86.ActiveCfg = Release|Any CPU
 		{D5F61087-E2E9-486A-808F-C876BE1022DC}.Release|x86.Build.0 = Release|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Debug|x64.Build.0 = Debug|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Release|x64.ActiveCfg = Release|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Release|x64.Build.0 = Release|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{247F48C0-91F7-4E84-A86F-8805543564FF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E508801-0A10-46E4-AF82-EF75B977EA26}
 	EndGlobalSection
 EndGlobal

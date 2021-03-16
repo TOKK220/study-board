@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <ProjectReference Include="..\StudyBoard.Core.Web\StudyBoard.Core.Web.csproj" />
     <ProjectReference Include="..\StudyBoard.Core\StudyBoard.Core.csproj" />
     <ProjectReference Include="..\StudyBoard.Auth\StudyBoard.Auth.csproj" />
   </ItemGroup>
