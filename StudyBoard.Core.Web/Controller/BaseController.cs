@@ -4,9 +4,9 @@ using Microsoft.Extensions.Logging;
 namespace StudyBoard.Core.Web.Controller
 {
 	[ApiController]
-	public abstract class Controller: ControllerBase {
+	public abstract class BaseController: ControllerBase {
 		protected ILogger Logger { get; }
-		protected Controller(ILogger logger) {
+		protected BaseController(ILogger logger) {
 			Logger = logger;
 		}
 		[HttpGet("ping")]
