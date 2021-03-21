@@ -3,21 +3,20 @@ using System;
 
 namespace StudyBoard.Auth
 {
-    class AuthorizationBLL : IAuthorizationBLL
+    class AuthenticationBLL : IAuthenticationBLL
     {
         private readonly AuthContext _authContext;
 
-        public AuthorizationBLL(AuthContext authContext)
+        public AuthenticationBLL(AuthContext authContext)
         {
             _authContext = authContext;
         }
 
-        public void CreateUser(User user)
+        public void Register(User user, Contact contact)
         {
-            throw new NotImplementedException();
         }
 
-        public void CreateContact(Contact contact)
+        public void Login(User user)
         {
             throw new NotImplementedException();
         }
