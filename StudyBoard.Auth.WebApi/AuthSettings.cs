@@ -1,17 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
+using StudyBoard.Core.Web.Setting;
 
 namespace StudyBoard.Auth.WebApi {
-	public class AuthSettings {
-		private IConfiguration Configuration { get; }
+	public class AuthSettings : BaseAppSettings {
 		public string DataBaseConnectionString => GetConnectionString("AuthDatabase");
-		public AuthSettings(IConfiguration configuration) {
-			Configuration = configuration;
-		}
-		protected virtual string GetConnectionString(string name) {
-			return Configuration.GetConnectionString(name);
-		}
-		protected virtual T GetSettingValue<T>(string name) {
-			return Configuration.GetValue<T>(name);
-		}
+		public AuthSettings(IConfiguration configuration): base(configuration) {}
 	}
 }
