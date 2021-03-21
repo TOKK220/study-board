@@ -1,3 +1,4 @@
+using System.Security.Permissions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -5,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StudyBoard.Auth.Repository;
 
 namespace StudyBoard.Auth.WebApi {
 	public class Startup {
@@ -16,6 +18,7 @@ namespace StudyBoard.Auth.WebApi {
 			services.AddSingleton(_settings);
 			services.AddDbContext<AuthContext>(options =>
 				options.UseNpgsql(_settings.DataBaseConnectionString));
+            services.AddSingleton<IAuthRepository, AuthRepository>();
 		}
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 			if (env.IsDevelopment()) {
