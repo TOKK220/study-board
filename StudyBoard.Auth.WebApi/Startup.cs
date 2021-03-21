@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,7 +14,8 @@ namespace StudyBoard.Auth.WebApi {
 		}
 		public void ConfigureServices(IServiceCollection services) {
 			services.AddSingleton(_settings);
-			var conn = _settings.DataBaseConnectionString;
+			services.AddDbContext<AuthContext>(options =>
+				options.UseNpgsql(_settings.DataBaseConnectionString));
 		}
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 			if (env.IsDevelopment()) {
