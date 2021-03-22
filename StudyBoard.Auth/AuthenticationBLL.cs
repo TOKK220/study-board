@@ -1,19 +1,22 @@
 ﻿using StudyBoard.Auth.Model;
 using System;
+using StudyBoard.Auth.Repository;
 
 namespace StudyBoard.Auth
 {
     class AuthenticationBLL : IAuthenticationBLL
     {
-        private readonly AuthContext _authContext;
+        private readonly IAuthRepository _authRepository;
 
-        public AuthenticationBLL(AuthContext authContext)
+        public AuthenticationBLL(IAuthRepository authRepository)
         {
-            _authContext = authContext;
+            _authRepository = authRepository;
         }
 
         public void Register(User user, Contact contact)
         {
+            _authRepository.TryCreateUser(user);
+            // TODO: create contact
         }
 
         public void Login(User user)

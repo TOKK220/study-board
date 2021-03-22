@@ -1,0 +1,27 @@
+﻿using System;
+using System.Linq;
+using StudyBoard.Auth.Model;
+
+namespace StudyBoard.Auth.Repository
+{
+    public class AuthRepository : IAuthRepository
+    {
+        private readonly AuthContext _authContext;
+
+        public AuthRepository(AuthContext authContext)
+        {
+            _authContext = authContext;
+        }
+
+        public void TryCreateUser(User user)
+        {
+            if (_authContext.Users.Any(dbUser => dbUser.Login.Equals(user.Login)))
+            {
+                throw new ArgumentException("User with the same login already exists.");
+            }
+
+            _authContext.Add(user);
+            _authContext.SaveChanges();
+        }
+    }
+}
