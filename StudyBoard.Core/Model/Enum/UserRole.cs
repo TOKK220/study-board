@@ -1,4 +1,4 @@
-﻿namespace StudyBoard.Core.Model {
+﻿namespace StudyBoard.Core.Model.Enum {
 	public enum UserRole {
 		Admin = 1,
 		Teacher = 2,

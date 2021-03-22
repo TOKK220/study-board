@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using StudyBoard.Core.Model;
 using StudyBoard.Core.Model.Base;
+using StudyBoard.Core.Model.Enum;
 
 namespace StudyBoard.Auth.Model
 {
