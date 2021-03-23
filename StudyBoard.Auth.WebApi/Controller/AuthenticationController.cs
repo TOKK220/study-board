@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using StudyBoard.Auth.Model;
 using StudyBoard.Auth.WebApi.Model;
-using StudyBoard.Core.Model;
+using StudyBoard.Core.Model.Enum;
 using StudyBoard.Core.Web.Controller;
 
 namespace StudyBoard.Auth.WebApi.Controller {
