@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="label">
+        <label for="input_value">First Name</label>
+    </div>
+    <div class="value">
+        <input type="text" id="input_value" [value]="value"
+        (change)="value = $event.target.value" [placeholder]="placeholder" name="firstname" >
+    </div>
+</div>
