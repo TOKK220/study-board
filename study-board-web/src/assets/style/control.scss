@@ -1,4 +1,5 @@
 @import "variable.scss";
+
 .container .control {
     display: flex;
     .label {
@@ -10,12 +11,18 @@
     }
     .value {
         flex-grow: 8;
+        input.ng-touched.ng-invalid {
+            border: solid red 2px;
+        }
         input {
             width: -webkit-fill-available;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: solid #ccc 2px;
             border-radius: 4px;
             resize: vertical;
+        }
+        .alert {
+            color: red;
         }
     }
 }

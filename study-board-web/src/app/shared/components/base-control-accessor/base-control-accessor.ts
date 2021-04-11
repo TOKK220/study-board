@@ -1,8 +1,6 @@
-import {ControlContainer, ControlValueAccessor, FormControl, FormControlDirective} from '@angular/forms';
-import {Injectable, Injector, Input, ViewChild} from '@angular/core';
+import {ControlValueAccessor} from '@angular/forms';
 
-@Injectable()
-export class BaseControlAccessor implements ControlValueAccessor {
+export abstract class BaseControlAccessor implements ControlValueAccessor {
   protected propagateChangeFn: (_: any) => void;
   protected propagateTouchedFn: (_: any) => void;
   public isDisabled: boolean;

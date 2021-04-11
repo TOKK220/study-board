@@ -1,9 +1,0 @@
-<div class="container control">
-    <div class="label" *ngIf="caption">
-        <label for="input_value">{{caption}}</label>
-    </div>
-    <div class="value">
-        <input type="text" id="input_value" [value]="value"
-        (change)="value = $event.target.value" [placeholder]="placeholder" >
-    </div>
-</div>

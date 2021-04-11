@@ -1,29 +1,30 @@
-import { Component, forwardRef, Injector, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { BaseInputControl } from '../base-input-control/base-input-control';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { NgControl, NgModel, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { BaseInputControlComponent } from '../base-input-control/base-input-control.component';
 
 
 @Component({
   selector: 'sb-text-control',
-  templateUrl: './text-control.component.html',
+  templateUrl: '../base-input-control/base-input-control.component.html',
   styleUrls: ['./text-control.component.scss'],
-  inputs: ["placeholder"],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TextControlComponent),
     multi: true
   }]
 })
-export class TextControlComponent extends BaseInputControl<string> implements OnInit {
-
+export class TextControlComponent extends BaseInputControlComponent<string>  {
   ngOnInit(): void {
+    super.ngOnInit();
     this.setDefaultValue();
   }
 
-  protected setDefaultValue() {
+  protected setDefaultValue(): void {
     if (!this.value) {
       this.value = "";
     }
   }
-
+  protected getInputTypeName(): string {
+    return "text";
+  }
 }

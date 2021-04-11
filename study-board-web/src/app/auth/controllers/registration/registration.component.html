@@ -3,7 +3,7 @@
         <h1 i18n="@@registratiob.header">Registration page</h1>
     </div>
     <div class="body">
-        <sb-text-control></sb-text-control>
+        <sb-text-control [caption]="'Login'" [(ngModel)]="registration.login"  [isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20"></sb-text-control>
     </div>
     <div class="footer">
 
