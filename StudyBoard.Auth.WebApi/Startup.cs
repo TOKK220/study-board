@@ -14,17 +14,21 @@ namespace StudyBoard.Auth.WebApi {
 		public Startup(IConfiguration configuration) {
 			_settings = new AuthSettings(configuration);
 		}
+
 		public void ConfigureServices(IServiceCollection services) {
 			services.AddSingleton(_settings);
-			services.AddDbContext<AuthContext>(options =>
-				options.UseNpgsql(_settings.DataBaseConnectionString));
-            services.AddSingleton<IAuthRepository, AuthRepository>();
-		}
+            services.AddDbContext<AuthContext>(options =>
+                options.UseNpgsql(_settings.DataBaseConnectionString));
+			services.AddTransient<IAuthRepository, AuthRepository>();
+        }
+
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 			if (env.IsDevelopment()) {
 				app.UseDeveloperExceptionPage();
 			}
 			app.UseRouting();
+            //app.UseAuthentication();
+            //app.UseAuthorization();
 			app.UseEndpoints(endpoints => {
 				endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
 			});
