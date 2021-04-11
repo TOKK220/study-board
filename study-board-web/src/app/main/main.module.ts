@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from '@shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { AuthModule } from 'app/auth/auth.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     MainRoutingModule,
     BrowserModule,
     SharedModule,
+    AuthModule,
     FormsModule
   ],
   bootstrap: [MainComponent]

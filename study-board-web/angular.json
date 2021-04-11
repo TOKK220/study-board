@@ -14,6 +14,10 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "sb",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {}
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -67,7 +71,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "study-board-web:build"
+            "browserTarget": "study-board-web:build:en"
           },
           "configurations": {
             "production": {
