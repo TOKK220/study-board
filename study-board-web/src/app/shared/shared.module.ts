@@ -4,13 +4,13 @@ import { SharedRoutingModule } from './shared-routing.module';
 import * as fromComponents from './components';
 import { CoreModule } from '@core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordControlComponent } from './components/password-control/password-control.component';
 
 @NgModule({
-  declarations: [...fromComponents.components],
+  declarations: [...fromComponents.components, PasswordControlComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedRoutingModule,
     FormsModule,
     CoreModule
   ],
