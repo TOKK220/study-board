@@ -17,6 +17,13 @@ import { BaseInputControl } from '../base-input-control/base-input-control';
 export class TextControlComponent extends BaseInputControl<string> implements OnInit {
 
   ngOnInit(): void {
+    this.setDefaultValue();
+  }
+
+  protected setDefaultValue() {
+    if (!this.value) {
+      this.value = "";
+    }
   }
 
 }

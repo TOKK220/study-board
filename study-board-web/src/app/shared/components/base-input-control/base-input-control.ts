@@ -3,6 +3,7 @@ import { BaseControl } from "../base-control/base-control";
 
 @Injectable()
 export class BaseInputControl<T> extends BaseControl {
+	@Input() caption: string;
     @Input() placeholder: string;
     private _value: T;
 	get value(): T {
