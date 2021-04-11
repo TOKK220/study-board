@@ -1,6 +1,6 @@
-﻿using System;
+﻿using StudyBoard.Auth.Model;
+using System;
 using System.Linq;
-using StudyBoard.Auth.Model;
 
 namespace StudyBoard.Auth.Repository
 {
@@ -13,7 +13,7 @@ namespace StudyBoard.Auth.Repository
             _authContext = authContext;
         }
 
-        public void TryCreateUser(User user)
+        public void CreateUser(User user)
         {
             if (_authContext.Users.Any(dbUser => dbUser.Login.Equals(user.Login)))
             {

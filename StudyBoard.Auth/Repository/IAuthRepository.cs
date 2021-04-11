@@ -4,6 +4,6 @@ namespace StudyBoard.Auth.Repository
 {
     public interface IAuthRepository
     {
-        void TryCreateUser(User user);
+        void CreateUser(User user);
     }
 }

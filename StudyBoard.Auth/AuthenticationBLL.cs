@@ -1,6 +1,6 @@
 ﻿using StudyBoard.Auth.Model;
-using System;
 using StudyBoard.Auth.Repository;
+using System;
 
 namespace StudyBoard.Auth
 {
@@ -15,7 +15,7 @@ namespace StudyBoard.Auth
 
         public void Register(User user, Contact contact)
         {
-            _authRepository.TryCreateUser(user);
+            _authRepository.CreateUser(user);
             // TODO: create contact
         }
 
