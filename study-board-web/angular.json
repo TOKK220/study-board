@@ -30,10 +30,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/translate"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/style/control.scss",
+              "src/assets/style/variable.scss"
             ],
             "scripts": []
           },
@@ -71,7 +73,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "study-board-web:build:en"
+            "browserTarget": "study-board-web:build"
           },
           "configurations": {
             "production": {

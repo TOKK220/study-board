@@ -1,0 +1,21 @@
+@import "variable.scss";
+.container .control {
+    display: flex;
+    .label {
+        flex-grow: 4;
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+    }
+    .value {
+        flex-grow: 8;
+        input {
+            width: -webkit-fill-available;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    }
+}
