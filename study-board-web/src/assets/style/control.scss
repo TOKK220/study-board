@@ -1,10 +1,10 @@
-@import url(variable.scss);
+@import "src/assets/style/variable.scss";
 
 .control {
     .label {
         .require-label {
             color: red;
-            margin-left: 2px;
+            margin-left: 1px;
         }
     }
 }
