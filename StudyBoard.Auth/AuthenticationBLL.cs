@@ -19,9 +19,9 @@ namespace StudyBoard.Auth
             // TODO: create contact
         }
 
-        public void Login(User user)
+        public User Login(string login, string password)
         {
-            throw new NotImplementedException();
+            return _authRepository.GetUserByLoginAndPassword(login, password);
         }
     }
 }

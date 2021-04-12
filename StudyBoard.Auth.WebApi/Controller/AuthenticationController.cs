@@ -9,6 +9,7 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using StudyBoard.Auth.WebApi.Utilities;
 
 namespace StudyBoard.Auth.WebApi.Controller
 {
@@ -19,31 +20,25 @@ namespace StudyBoard.Auth.WebApi.Controller
 	public class AuthenticationController : BaseController {
         private readonly IAuthenticationBLL _authenticationBLL;
         private readonly AuthSettings _authSettings;
+        private readonly TokenGenerator _tokenGenerator;
 
         public AuthenticationController(ILogger logger, IAuthenticationBLL authenticationBLL,
-            AuthSettings authSettings) : base(logger)
+            AuthSettings authSettings,
+            TokenGenerator tokenGenerator) : base(logger)
         {
             _authenticationBLL = authenticationBLL;
             _authSettings = authSettings;
+            _tokenGenerator = tokenGenerator;
         }
 
-        public IActionResult Authenticate(Guid userId, string email)
+        [HttpPost]
+        public IActionResult Login(string login, string password)
         {
-            var signingCredentials = new SigningCredentials(_authSettings.SecurityKey, SecurityAlgorithms.HmacSha256);
-            var claims = new []
-            {
-                new Claim(JwtRegisteredClaimNames.Email, email), 
-                new Claim(JwtRegisteredClaimNames.Sub, userId.ToString())
-            };
-            var token = new JwtSecurityToken(_authSettings.TokenIssuer, 
-                _authSettings.TokenAudience, 
-                claims, 
-                notBefore: DateTime.Now,
-                expires: DateTime.Now.AddMilliseconds(_authSettings.TokenLifetime),
-                signingCredentials: signingCredentials);
-            return Ok(new { access_token = new JwtSecurityTokenHandler().WriteToken(token) });
+            var user = _authenticationBLL.Login(login, password);
+            return Ok(new { accessToken = _tokenGenerator.GenerateToken(user.Id) });
         }
 
+        [HttpPost]
         public RegistrationResponse Register(RegistrationRequest registrationRequest)
         {
             // TODO: validate registrationRequest
@@ -63,7 +58,12 @@ namespace StudyBoard.Auth.WebApi.Controller
                 PhoneNumber = registrationRequest.PhoneNumber
             };
             _authenticationBLL.Register(user, contact);
-            return new RegistrationResponse();
+
+            var token = _tokenGenerator.GenerateToken(user.Id);
+            return new RegistrationResponse
+            {
+                Token = token
+            };
         }
 	}
 }

@@ -5,6 +5,6 @@ namespace StudyBoard.Auth
 	public interface IAuthenticationBLL
 	{
 		void Register(User user, Contact contact);
-		void Login(User user);
+        User Login(string login, string password);
 	}
 }

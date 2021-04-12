@@ -23,5 +23,10 @@ namespace StudyBoard.Auth.Repository
             _authContext.Add(user);
             _authContext.SaveChanges();
         }
+
+        public User GetUserByLoginAndPassword(string login, string password)
+        {
+            return _authContext.Users.SingleOrDefault(x => x.Login == login && x.Password == password);
+        }
     }
 }
