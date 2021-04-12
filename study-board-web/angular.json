@@ -35,9 +35,12 @@
             ],
             "styles": [
               "src/assets/style/control.scss",
-              "src/assets/style/variable.scss"
+              "src/assets/style/variable.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
