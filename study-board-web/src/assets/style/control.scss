@@ -1,28 +1,10 @@
-@import "variable.scss";
+@import url(variable.scss);
 
-.container .control {
-    display: flex;
+.control {
     .label {
-        flex-grow: 4;
-        label {
-            padding: 12px 12px 12px 0;
-            display: inline-block;
-        }
-    }
-    .value {
-        flex-grow: 8;
-        input.ng-touched.ng-invalid {
-            border: solid red 2px;
-        }
-        input {
-            width: -webkit-fill-available;
-            padding: 12px;
-            border: solid #ccc 2px;
-            border-radius: 4px;
-            resize: vertical;
-        }
-        .alert {
+        .require-label {
             color: red;
+            margin-left: 2px;
         }
     }
 }

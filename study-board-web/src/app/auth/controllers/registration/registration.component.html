@@ -3,7 +3,15 @@
         <h1 i18n="@@registratiob.header">Registration page</h1>
     </div>
     <div class="body">
-        <sb-text-control [caption]="'Login'" [(ngModel)]="registration.login"  [isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20"></sb-text-control>
+        <form #registrationForm="ngForm" compare-validator compareField1="password" compareField2="confirm-password">
+            <sb-text-control caption="Login" [(ngModel)]="registration.login" name="login" [isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20" class="field"></sb-text-control>
+            <sb-text-control caption="Password" [(ngModel)]="registration.password" name="password"  [isRequired]="true" placeholder="Enter password" minlength="4" maxlength="20" class="field"></sb-text-control>
+            <sb-text-control caption="Confirm password" [(ngModel)]="confirmPassword" name="confirm-password" [isRequired]="true" placeholder="Enter password" class="field"></sb-text-control>
+            <div *ngIf="registrationForm.errors?.notCompare && (registrationForm.touched || registrationForm.dirty)" class="alert alert-danger">
+                Password not match
+            </div>
+            <button [disabled]="registrationForm.invalid" class="btn btn-primary sign-up-btn">Sign me up</button> 
+        </form>
     </div>
     <div class="footer">
 

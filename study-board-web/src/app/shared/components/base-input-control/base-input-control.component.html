@@ -1,11 +1,13 @@
-<div class="container control">
-    <div class="label" *ngIf="caption">
+<div class="control">
+    <div class="label form-label" *ngIf="caption">
         <label for="input_value">{{caption}}</label>
+        <label class="require-label" *ngIf="isRequired">*</label>
     </div>
     <div class="value">
         <input [type]="type" id="input_value" [required]="isRequired" [pattern]="textPattern"
-        [placeholder]="placeholder" [(ngModel)]="value" #name="ngModel" [minlength]="minlength" [maxlength]="maxlength">
-        <div *ngIf="!name.valid && (name.dirty || name.touched)" class="alert alert-danger">
+        [placeholder]="placeholder" [(ngModel)]="value" #name="ngModel" [minlength]="minlength" [maxlength]="maxlength"
+        class="form-control" [class.is-invalid]="!name.valid && (name.dirty || name.touched)">
+        <div *ngIf="!name.valid && (name.dirty || name.touched)" class="invalid-feedback">
             <div *ngIf="name.errors?.required" i18n="@@text_control.require">Field is required.</div>
             <div *ngIf="name.errors?.minlength || name.errors?.maxlength" i18n="@@text_control.min_characters_foure">Value must be at least 4 characters long.</div>
             <div *ngIf="name.errors?.pattern" i18n="@@text_control.not_correct_format">Not correct format.</div>

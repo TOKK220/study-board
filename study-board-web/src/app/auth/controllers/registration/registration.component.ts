@@ -9,6 +9,7 @@ import { Guid } from 'guid-typescript';
 })
 export class RegistrationComponent {
   public registration: Registration = new Registration(Guid.create());
+  public confirmPassword: string;
   ngOnInit(): void {
   }
 
