@@ -25,7 +25,7 @@ namespace StudyBoard.Auth.WebApi
                     {
 						ValidIssuer = _settings.TokenIssuer,
 						ValidAudience = _settings.TokenAudience,
-						IssuerSigningKey = AuthConstants.SecurityKey
+						IssuerSigningKey = _settings.SecurityKey
 					};
                 });
 			services.AddSingleton(_settings);

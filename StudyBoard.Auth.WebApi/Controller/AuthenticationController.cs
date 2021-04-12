@@ -29,7 +29,7 @@ namespace StudyBoard.Auth.WebApi.Controller
 
         public IActionResult Authenticate(Guid userId, string email)
         {
-            var signingCredentials = new SigningCredentials(AuthConstants.SecurityKey, SecurityAlgorithms.HmacSha256);
+            var signingCredentials = new SigningCredentials(_authSettings.SecurityKey, SecurityAlgorithms.HmacSha256);
             var claims = new []
             {
                 new Claim(JwtRegisteredClaimNames.Email, email), 
