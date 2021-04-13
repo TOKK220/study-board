@@ -4,12 +4,16 @@
     </div>
     <div class="body">
         <form #registrationForm="ngForm" compare-validator compareField1="password" compareField2="confirm-password">
+            <sb-text-control caption="First name" [(ngModel)]="registration.firstName" name="firstName" [isRequired]="true" placeholder="Enter first name" minlength="2" maxlength="20" class="field"></sb-text-control>
+            <sb-text-control caption="Last name" [(ngModel)]="registration.lastName" name="lastName" [isRequired]="true" placeholder="Enter last name" minlength="2" maxlength="20" class="field"></sb-text-control>
             <sb-text-control caption="Login" [(ngModel)]="registration.login" name="login" [isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20" class="field"></sb-text-control>
             <sb-text-control caption="Password" [(ngModel)]="registration.password" name="password"  [isRequired]="true" placeholder="Enter password" minlength="4" maxlength="20" class="field"></sb-text-control>
             <sb-text-control caption="Confirm password" [(ngModel)]="confirmPassword" name="confirm-password" [isRequired]="true" placeholder="Enter password" class="field"></sb-text-control>
-            <div *ngIf="registrationForm.errors?.notCompare && (registrationForm.touched || registrationForm.dirty)" class="alert alert-danger">
+            <div *ngIf="registrationForm.errors?.notCompare && (registrationForm.touched || registrationForm.dirty)" class="invalid-feedback">
                 Password not match
             </div>
+            <sb-text-control caption="Phone number" [(ngModel)]="registration.phoneNumber" name="phoneNumber" placeholder="Enter phone number" minlength="8" maxlength="20" class="field"></sb-text-control>
+            <sb-text-control caption="Email" [(ngModel)]="registration.email" name="email" placeholder="Enter email" minlength="8" maxlength="20" class="field"></sb-text-control>
             <button [disabled]="registrationForm.invalid" class="btn btn-primary sign-up-btn">Sign me up</button> 
         </form>
     </div>
