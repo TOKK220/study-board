@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Registration } from '@core/auth/registration';
+import { Registration } from '@core/model/auth/registration';
 import { Guid } from 'guid-typescript';
 
 @Component({
