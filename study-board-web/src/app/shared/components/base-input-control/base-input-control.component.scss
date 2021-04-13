@@ -1,0 +1,9 @@
+.control {
+    margin: 2px;
+    .label {
+        .require-label {
+            color: red;
+            margin-left: 1px;
+        }
+    }
+}

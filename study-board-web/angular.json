@@ -34,8 +34,9 @@
               "src/translate"
             ],
             "styles": [
-              "src/assets/style/control.scss",
               "src/assets/style/variable.scss",
+              "src/assets/style/base.scss",
+              "src/assets/style/control.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
