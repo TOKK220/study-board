@@ -13,6 +13,9 @@ export class AuthService extends BaseHttpService {
     public registration(request: RegistrationRequest): Observable<RegistrationResponse> {
         return this.castObject(this.http.post(this.url + "/authentication/registration", request), RegistrationResponse);
     }
+    public isLoggedIn(): boolean {
+        return !!this.getToken();
+    }
     public getToken() : string {
 		return sessionStorage.getItem(this.AuthorizedStorageKey) ||
 			localStorage.getItem(this.AuthorizedStorageKey);
