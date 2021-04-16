@@ -1,7 +1,7 @@
-import {Observable} from "rxjs";
-import {map, mergeAll} from "rxjs/operators";
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import { Observable } from "rxjs";
+import { map, mergeAll } from "rxjs/operators";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import { ObjectUtility } from "@core/utility/object.utility";
 
 @Injectable()
