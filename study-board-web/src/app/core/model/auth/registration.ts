@@ -1,6 +1,4 @@
-import { BaseObject } from "@core/model/base/base-object";
-
-export class Registration extends BaseObject {
+export class Registration {
     public name: string;
 	public login: string;
 	public password: string;
