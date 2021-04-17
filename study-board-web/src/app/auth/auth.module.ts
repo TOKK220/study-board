@@ -5,12 +5,14 @@ import { RegistrationComponent } from './controllers/registration/registration.c
 import { SharedModule } from '@shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CompareValidator } from '@core/form/validator/compare-validator';
+import { LoginComponent } from './controllers/login/login.component';
 
 
 @NgModule({
   declarations: [
     RegistrationComponent,
-    CompareValidator
+    CompareValidator,
+    LoginComponent
   ],
   imports: [
     CommonModule,
