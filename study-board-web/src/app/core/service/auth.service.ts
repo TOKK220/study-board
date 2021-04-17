@@ -25,7 +25,7 @@ export class AuthService extends BaseHttpService {
 		return sessionStorage.getItem(this.AuthorizedStorageKey) ||
 			localStorage.getItem(this.AuthorizedStorageKey);
 	}
-	public setToken(token: string, isSession: boolean) {
+	public setToken(token: string, isSession: boolean = false) {
 		if (isSession) {
 			sessionStorage.setItem(this.AuthorizedStorageKey, token);
 		} else {

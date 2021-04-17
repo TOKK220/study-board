@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container">
+    <div class="header">
+        <h1 i18n="@@login.header">Login page</h1>
+    </div>
+    <div class="body">
+        <form #loginForm="ngForm">
+            <sb-text-control #loginField="ngModel" caption="Login" [(ngModel)]="login.login" name="login"
+                [isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20" class="field"
+                i18n-caption="@@login.login.caption" i18n-placeholder="@@login.login.placeholder">
+            </sb-text-control>
+            <sb-text-control #password="ngModel" caption="Password" [(ngModel)]="login.password" name="password"
+                [isRequired]="true" placeholder="Enter password" minlength="4" maxlength="20" class="field"
+                i18n-caption="@@login.password.caption" i18n-placeholder="@@login.password.placeholder">
+            </sb-text-control>
+            <button [disabled]="loginForm.invalid || loginField.invalid || password.invalid"
+                class="btn btn-primary sign-up-btn" (click)="loginClick()" 
+                i18n="@@login.sign-in.caption">Sign me in</button> 
+        </form>
+    </div>
+    <div class="footer">
+
+    </div>
+</div>
