@@ -1,3 +1,3 @@
 export class RegistrationResponse {
-    public token: string;
+	public token: string;
 }

@@ -1,12 +1,12 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http"
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http"
 import { Injectable } from "@angular/core";
 import { AuthService } from "@core/service/auth.service";
 import { environment } from "environment/environment";
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor  {
-	public AuthorizedHeaderKey: string  = environment.authTokenHeaderKey;
+export class AuthInterceptor implements HttpInterceptor {
+	public AuthorizedHeaderKey: string = environment.authTokenHeaderKey;
 
 	constructor(protected aythService: AuthService) { }
 
@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor  {
 		req = this.setAuthHeaders(req);
 		return next.handle(req);
 	}
-	setAuthHeaders(req: HttpRequest<any>) : HttpRequest<any> {
+	setAuthHeaders(req: HttpRequest<any>): HttpRequest<any> {
 		let token = this.aythService.getToken();
 		if (token === null) {
 			return req

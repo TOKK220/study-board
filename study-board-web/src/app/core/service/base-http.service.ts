@@ -7,16 +7,16 @@ import { ObjectUtility } from "@core/utility/object.utility";
 @Injectable()
 export abstract class BaseHttpService {
 
-	constructor(protected http: HttpClient) {}
+	constructor(protected http: HttpClient) { }
 
-	castObject<T>(observable: Observable<any>, type: {new(): T}): Observable<T> {
+	castObject<T>(observable: Observable<any>, type: { new(): T }): Observable<T> {
 		return observable.pipe(map(value => this.mapObjects([value], type)), mergeAll<T>());
 	}
-	castObjects<T>(observable: Observable<any>, type: {new(): T}): Observable<T[]> {
+	castObjects<T>(observable: Observable<any>, type: { new(): T }): Observable<T[]> {
 		return observable.pipe(map(value => this.mapObjects(value, type)));
 	}
-	mapObjects<T>(data: any[], type: {new(): T}): T[] {
-		return  data.map<T>(dataItem => {
+	mapObjects<T>(data: any[], type: { new(): T }): T[] {
+		return data.map<T>(dataItem => {
 			let obj = new type();
 			ObjectUtility.setObjectProperties(obj, dataItem);
 			return obj;

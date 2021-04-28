@@ -9,16 +9,16 @@ import { LoginComponent } from './controllers/login/login.component';
 
 
 @NgModule({
-  declarations: [
-    RegistrationComponent,
-    CompareValidator,
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    SharedModule,
-    FormsModule
-  ]
+	declarations: [
+		RegistrationComponent,
+		CompareValidator,
+		LoginComponent
+	],
+	imports: [
+		CommonModule,
+		AuthRoutingModule,
+		SharedModule,
+		FormsModule
+	]
 })
 export class AuthModule { }

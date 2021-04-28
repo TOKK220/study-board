@@ -1,50 +1,51 @@
 <div class="container">
-    <div class="header">
-        <h1 i18n="@@registration.header">Registration page</h1>
-    </div>
-    <div class="body">
-        <form #registrationForm="ngForm" compare-validator compareField1="password" compareField2="confirm-password">
-            <sb-text-control #firstName="ngModel" caption="First name" [(ngModel)]="registration.firstName"
-                name="firstName" [isRequired]="true" placeholder="Enter first name" minlength="2" maxlength="20"
-                class="field" i18n-caption="@@registration.firstName.caption"
-                i18n-placeholder="@@registration.firstName.placeholder">
-            </sb-text-control>
-            <sb-text-control #lastName="ngModel" caption="Last name" [(ngModel)]="registration.lastName"
-                name="lastName" [isRequired]="true" placeholder="Enter last name" minlength="2" maxlength="20"
-                class="field" i18n-caption="@@registration.lastName.caption"
-                i18n-placeholder="@@registration.lastName.placeholder">
-            </sb-text-control>
-            <sb-text-control #login="ngModel" caption="Login" [(ngModel)]="registration.login" name="login"
-                [isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20" class="field"
-                i18n-caption="@@registration.login.caption" i18n-placeholder="@@registration.login.placeholder">
-            </sb-text-control>
-            <sb-text-control #password="ngModel" caption="Password" [(ngModel)]="registration.password" name="password"
-                [isRequired]="true" placeholder="Enter password" minlength="4" maxlength="20" class="field"
-                i18n-caption="@@registration.password.caption" i18n-placeholder="@@registration.password.placeholder">
-            </sb-text-control>
-            <sb-text-control #confassword="ngModel" caption="Confirm password" [(ngModel)]="confirmPassword"
-                name="confirm-password" [isRequired]="true" placeholder="Enter password" class="field"
-                i18n-caption="@@registration.confirmPassword.caption"
-                i18n-placeholder="@@registration.confirmPassword.placeholder">
-            </sb-text-control>
-            <div *ngIf="registrationForm.errors?.notCompare && (registrationForm.touched || registrationForm.dirty)"
-                class="invalid-feedback" i18n="@@registration.confirmPassword.notMatch">
-                Password not match
-            </div>
-            <sb-text-control #phoneNumber="ngModel" caption="Phone number" [(ngModel)]="registration.phoneNumber"
-                name="phoneNumber" placeholder="Enter phone number" minlength="8" maxlength="20" class="field"
-                i18n-caption="@@registration.phoneNumber.caption" i18n-placeholder="@@registration.phoneNumber.placeholder">
-            </sb-text-control>
-            <sb-text-control #email="ngModel" caption="Email" [(ngModel)]="registration.email" name="email"
-                placeholder="Enter email" minlength="8" maxlength="20" class="field"
-                i18n-caption="@@registration.email.caption" i18n-placeholder="@@registration.email.placeholder">
-            </sb-text-control>
-            <button [disabled]="registrationForm.invalid || firstName.invalid || lastName.invalid || login.invalid || password.invalid || confassword.invalid || phoneNumber.invalid || email.invalid"
-                class="btn btn-primary sign-up-btn" (click)="registrationClick()" 
-                i18n="@@registration.sign-up.caption">Sign me up</button> 
-        </form>
-    </div>
-    <div class="footer">
+	<div class="header">
+		<h1 i18n="@@registration.header">Registration page</h1>
+	</div>
+	<div class="body">
+		<form #registrationForm="ngForm" compare-validator compareField1="password" compareField2="confirm-password">
+			<sb-text-control #firstName="ngModel" caption="First name" [(ngModel)]="registration.firstName"
+				name="firstName" [isRequired]="true" placeholder="Enter first name" minlength="2" maxlength="20"
+				class="field" i18n-caption="@@registration.firstName.caption"
+				i18n-placeholder="@@registration.firstName.placeholder">
+			</sb-text-control>
+			<sb-text-control #lastName="ngModel" caption="Last name" [(ngModel)]="registration.lastName" name="lastName"
+				[isRequired]="true" placeholder="Enter last name" minlength="2" maxlength="20" class="field"
+				i18n-caption="@@registration.lastName.caption" i18n-placeholder="@@registration.lastName.placeholder">
+			</sb-text-control>
+			<sb-text-control #login="ngModel" caption="Login" [(ngModel)]="registration.login" name="login"
+				[isRequired]="true" placeholder="Enter login" minlength="4" maxlength="20" class="field"
+				i18n-caption="@@registration.login.caption" i18n-placeholder="@@registration.login.placeholder">
+			</sb-text-control>
+			<sb-text-control #password="ngModel" caption="Password" [(ngModel)]="registration.password" name="password"
+				[isRequired]="true" placeholder="Enter password" minlength="4" maxlength="20" class="field"
+				i18n-caption="@@registration.password.caption" i18n-placeholder="@@registration.password.placeholder">
+			</sb-text-control>
+			<sb-text-control #confassword="ngModel" caption="Confirm password" [(ngModel)]="confirmPassword"
+				name="confirm-password" [isRequired]="true" placeholder="Enter password" class="field"
+				i18n-caption="@@registration.confirmPassword.caption"
+				i18n-placeholder="@@registration.confirmPassword.placeholder">
+			</sb-text-control>
+			<div *ngIf="registrationForm.errors?.notCompare && (registrationForm.touched || registrationForm.dirty)"
+				class="invalid-feedback" i18n="@@registration.confirmPassword.notMatch">
+				Password not match
+			</div>
+			<sb-text-control #phoneNumber="ngModel" caption="Phone number" [(ngModel)]="registration.phoneNumber"
+				name="phoneNumber" placeholder="Enter phone number" minlength="8" maxlength="20" class="field"
+				i18n-caption="@@registration.phoneNumber.caption"
+				i18n-placeholder="@@registration.phoneNumber.placeholder">
+			</sb-text-control>
+			<sb-text-control #email="ngModel" caption="Email" [(ngModel)]="registration.email" name="email"
+				placeholder="Enter email" minlength="8" maxlength="20" class="field"
+				i18n-caption="@@registration.email.caption" i18n-placeholder="@@registration.email.placeholder">
+			</sb-text-control>
+			<button
+				[disabled]="registrationForm.invalid || firstName.invalid || lastName.invalid || login.invalid || password.invalid || confassword.invalid || phoneNumber.invalid || email.invalid"
+				class="btn btn-primary sign-up-btn" (click)="registrationClick()"
+				i18n="@@registration.sign-up.caption">Sign me up</button>
+		</form>
+	</div>
+	<div class="footer">
 
-    </div>
+	</div>
 </div>

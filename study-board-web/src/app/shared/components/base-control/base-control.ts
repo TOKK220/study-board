@@ -3,5 +3,5 @@ import { BaseControlAccessor } from '../base-control-accessor/base-control-acces
 
 @Directive()
 export abstract class BaseControl extends BaseControlAccessor {
-    @Input() public placeholder: string;
+	@Input() public placeholder: string;
 }

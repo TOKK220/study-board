@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
-  authTokenStorageKey: "",
-  authTokenHeaderKey: ""
+	production: false,
+	authTokenStorageKey: "",
+	authTokenHeaderKey: ""
 };

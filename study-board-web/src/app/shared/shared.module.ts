@@ -5,13 +5,13 @@ import { CoreModule } from '@core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [...fromComponents.components],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    CoreModule
-  ],
-  exports: [...fromComponents.components]
+	declarations: [...fromComponents.components],
+	imports: [
+		CommonModule,
+		ReactiveFormsModule,
+		FormsModule,
+		CoreModule
+	],
+	exports: [...fromComponents.components]
 })
 export class SharedModule { }
