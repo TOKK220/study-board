@@ -8,17 +8,21 @@ import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from '@shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from 'app/auth/auth.module';
+import { CoreModule } from '@core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [MainComponent, HomeComponent],
   imports: [
+    CoreModule,
     CommonModule,
     MainRoutingModule,
     BrowserModule,
     SharedModule,
     AuthModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   bootstrap: [MainComponent]
 })

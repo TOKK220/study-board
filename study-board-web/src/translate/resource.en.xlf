@@ -2,11 +2,168 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="registratiob.header" datatype="html">
+      <trans-unit id="registration.header" datatype="html">
         <source>Registration page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.firstName.caption" datatype="html">
+        <source>First name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.firstName.placeholder" datatype="html">
+        <source>Enter first name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.lastName.caption" datatype="html">
+        <source>Last name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.lastName.placeholder" datatype="html">
+        <source>Enter last name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.login.caption" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.login.placeholder" datatype="html">
+        <source>Enter login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.password.caption" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.password.placeholder" datatype="html">
+        <source>Enter password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.confirmPassword.caption" datatype="html">
+        <source>Confirm password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.confirmPassword.placeholder" datatype="html">
+        <source>Enter password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.confirmPassword.notMatch" datatype="html">
+        <source> Password not match </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.phoneNumber.caption" datatype="html">
+        <source>Phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.phoneNumber.placeholder" datatype="html">
+        <source>Enter phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.email.caption" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.email.placeholder" datatype="html">
+        <source>Enter email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration.sign-up.caption" datatype="html">
+        <source>Sign me up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/controllers/registration/registration.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="text_control.require" datatype="html">
+        <source>Field is required.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="text_control.min_characters_foure" datatype="html">
+        <source>Value must be at least <x id="INTERPOLATION" equiv-text="{{minlength}}"/> characters long.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="text_control.not_correct_format" datatype="html">
+        <source>Not correct format.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/base-input-control/base-input-control.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
     </body>
