@@ -1,10 +1,9 @@
 ﻿using StudyBoard.Auth.Model;
 using StudyBoard.Auth.Repository;
-using System;
 
 namespace StudyBoard.Auth
 {
-    class AuthenticationBLL : IAuthenticationBLL
+    public class AuthenticationBLL : IAuthenticationBLL
     {
         private readonly IAuthRepository _authRepository;
 

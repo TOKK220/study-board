@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using StudyBoard.Auth.Repository;
+using StudyBoard.Auth.WebApi.Utilities;
 
 namespace StudyBoard.Auth.WebApi
 {
@@ -29,21 +31,29 @@ namespace StudyBoard.Auth.WebApi
 					};
                 });
 			services.AddSingleton(_settings);
-            services.AddDbContext<AuthContext>(options =>
-                options.UseNpgsql(_settings.DataBaseConnectionString));
-			services.AddTransient<IAuthRepository, AuthRepository>();
+            services.AddDbContext<AuthContext>(options => options.UseNpgsql(_settings.DataBaseConnectionString)); 
+            services.AddTransient<IAuthenticationBLL, AuthenticationBLL>();
+            services.AddTransient<IAuthRepository, AuthRepository>();
+            services.AddSingleton<TokenGenerator>();
+            services.AddControllers();
+			services.AddSwaggerGen(c => c.ResolveConflictingActions(apiDescription => apiDescription.First()));
         }
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 			if (env.IsDevelopment()) {
 				app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Auth API");
+                });
 			}
-			app.UseRouting();
+            app.UseRouting();
             app.UseAuthentication();
             //app.UseAuthorization();
-			app.UseEndpoints(endpoints => {
-				endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
-			});
+            app.UseEndpoints(builder => builder.MapControllers()
+			    //builder.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
+			);
 		}
 	}
 }
