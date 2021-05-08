@@ -1,23 +1,21 @@
 variables:
-  TEST_VAR: "Azazaza"
+  SONARQUBE_URL: "http://192.168.0.101:9000"
+  SONARQUBE_TOKEN: "6a7a41930581b86269a7015bd86c15484467295e"
+  SONARQUBE_PROJECTKEY: "study-board"
 
 stages: 
   - build
 
-build-web: 
+build-app: 
   stage: build
   script: 
-    - docker --version
-    - cd study-board-web/
-    - npm i
+    - docker-compose up
   tags:
-    - docker
+    - docker-shell
 
-job1:
+sonar:
   stage: build
-  variables:
-    TEST_VAR_JOB: "Only job1 can use this variable's value"
   script:
-    - echo "$TEST_VAR" and "$TEST_VAR_JOB" "$CI_PROJECT_NAME"
+    - docker run --rm -e SONAR_HOST_URL="${SONARQUBE_URL}" -e SONAR_SCANNER_OPTS="-Xmx512m" -e SONAR_LOGIN="${SONARQUBE_TOKEN}" -v "${CI_BUILDS_DIR}:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=${SONARQUBE_PROJECTKEY}
   tags:
     - shell
