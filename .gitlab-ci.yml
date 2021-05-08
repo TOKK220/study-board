@@ -18,4 +18,4 @@ job1:
   script:
     - echo "$TEST_VAR" and "$TEST_VAR_JOB" "$CI_PROJECT_NAME"
   tags:
-  - server-shell
+    - shell
