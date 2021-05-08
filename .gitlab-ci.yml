@@ -17,3 +17,5 @@ job1:
     TEST_VAR_JOB: "Only job1 can use this variable's value"
   script:
     - echo "$TEST_VAR" and "$TEST_VAR_JOB" "$CI_PROJECT_NAME"
+  tags:
+  - server-shell
