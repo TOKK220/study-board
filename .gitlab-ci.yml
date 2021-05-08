@@ -12,6 +12,7 @@ build-web:
     - docker
 
 job1:
+  stage: build
   variables:
     TEST_VAR_JOB: "Only job1 can use this variable's value"
   script:
