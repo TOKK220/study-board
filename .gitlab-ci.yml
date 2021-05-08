@@ -8,6 +8,8 @@ build-web:
   stage: build
   script: 
     - docker --version
+    - cd study-board-web/
+    - npm i
   tags:
     - docker
 
